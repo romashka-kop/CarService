@@ -1,0 +1,34 @@
+﻿<Page x:Class="CarService.Pages.RequestsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CarService.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RequestsPage">
+
+    <DockPanel LastChildFill="True">
+        <Grid DockPanel.Dock="Top">
+            <Button x:Name="NewRequestBtn" Click="NewRequestBtn_Click" HorizontalAlignment="Left">Создать</Button>
+        </Grid>
+        
+        <ListView Name="RequestsList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="{Binding Id}"/>
+                            <Label Content="{Binding Description}"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+    </DockPanel>
+</Page>

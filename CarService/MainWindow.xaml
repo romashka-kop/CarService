@@ -1,0 +1,47 @@
+﻿<Window x:Class="CarService.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarService"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DockPanel x:Name="MainPanel" LastChildFill="True">
+            <Grid x:Name="TabBar" DockPanel.Dock="Top" Background="AliceBlue" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal" >
+                    <Button x:Name="RequestsButton" Click="RequestsButton_Click">
+                        Заявки
+                    </Button>
+                    <Button x:Name="BillsBtn" Click="BillsBtn_Click">
+                        Отчеты
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <TextBlock x:Name="Username"> Пользователь</TextBlock>
+                    <Button x:Name="LogoutBtn" Click="LogoutBtn_Click">Выход</Button>
+                </StackPanel>
+            </Grid>
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Source="/Pages/RequestsPage.xaml">
+
+            </Frame>
+        </DockPanel>
+
+        <StackPanel x:Name="LoginPanel" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" >
+            <DockPanel LastChildFill="True" >
+                <Label>Логин</Label>
+                <TextBox Name="Login"/>
+            </DockPanel>
+            <DockPanel LastChildFill="True" Margin="0,5,0,5" >
+                <Label>Пароль</Label>
+                <PasswordBox Name="Pass"/>
+            </DockPanel>
+            <Button x:Name="LoginBtn" Click="LoginBtn_Click">Войти</Button>
+        </StackPanel>
+    </Grid>
+</Window>
